@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from 'styled-components'
+import themeDefault from './stories/particles/themeDefault'
+import Button from './stories/atoms/button'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themeDefault}>
+      <div className="App">
+         <h1>Buttons</h1>
+        <Button variant='primary'>Real Basic Button</Button>
+        <Button variant='secondary' onClick={() => alert('hello')}>Real Function Button</Button>
+        <Button variant='tertiary' href= '/'>Real Linked Button</Button>
+      </div>
+    </ThemeProvider>
   );
 }
 
