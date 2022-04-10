@@ -1,3 +1,8 @@
+import React from "react"
+import { ThemeProvider } from 'styled-components'
+import themeDefault from '../src/stories/particles/themeDefault'
+import GlobalStyles from '../src/stories/particles/globalStyles'
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +12,11 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (Story)=>(
+  <ThemeProvider theme={themeDefault}>
+    <GlobalStyles/>
+    <Story />
+  </ThemeProvider>)
+]
